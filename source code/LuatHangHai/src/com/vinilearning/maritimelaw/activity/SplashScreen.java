@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.view.Window;
 
 import com.vinilearning.maritimelaw.R;
-import com.vinilearning.maritimelaw.adapters.LoadDataAsyncTask;
+import com.vinilearning.maritimelaw.asynctask.LoadDataAsyncTask;
 import com.vinilearning.maritimelaw.databases.DatabaseFactory;
 
 public class SplashScreen extends Activity {

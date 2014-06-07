@@ -39,7 +39,7 @@ public class BaseActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.action_aboutus:
-			DialogUtils.getInstance(this).showDialogAboutUs();
+			DialogUtils.getInstance(BaseActivity.this).showDialogAboutUs();
 			break;
 
 		default:

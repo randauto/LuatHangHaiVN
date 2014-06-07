@@ -1,4 +1,4 @@
-package com.vinilearning.maritimelaw.adapters;
+package com.vinilearning.maritimelaw.asynctask;
 
 import android.app.Activity;
 import android.content.Intent;

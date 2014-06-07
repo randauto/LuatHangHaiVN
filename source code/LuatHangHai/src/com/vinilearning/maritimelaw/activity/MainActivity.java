@@ -1,16 +1,16 @@
 package com.vinilearning.maritimelaw.activity;
 
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.widget.ListView;
 
 import com.vinilearning.maritimelaw.R;
 import com.vinilearning.maritimelaw.adapters.ChapterAdapter;
-import com.vinilearning.maritimelaw.common.BaseActivity;
 import com.vinilearning.maritimelaw.databases.DatabaseFactory;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends ActionBarActivity {
 	private ListView lvChapter;
-	
+
 	private ChapterAdapter adapter;
 
 	@Override

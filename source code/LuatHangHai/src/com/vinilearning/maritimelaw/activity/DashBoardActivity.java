@@ -27,8 +27,7 @@ public class DashBoardActivity extends BaseActivity {
 
 			@Override
 			public void onClick(View arg0) {
-				Intent intent = new Intent(getBaseContext(),
-						ContentActivity.class);
+				Intent intent = new Intent(getBaseContext(), MainActivity.class);
 				startActivity(intent);
 			}
 		});
