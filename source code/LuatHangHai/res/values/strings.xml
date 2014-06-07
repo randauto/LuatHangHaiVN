@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">Luat Hang Hai</string>
-    <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="website_vini">http://www.vinilearning.com</string>
     <string name="image_des">This is a image</string>

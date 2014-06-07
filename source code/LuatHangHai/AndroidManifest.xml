@@ -23,7 +23,8 @@
 
         <activity
             android:name="com.vinilearning.maritimelaw.activity.SplashScreen"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,12 +32,24 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.vinilearning.maritimelaw.activity.ContentActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.vinilearning.maritimelaw.activity.DashBoardActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name="com.vinilearning.maritimelaw.activity.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.vinilearning.maritimelaw.activity.IntroductionActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.google.android.gms.ads.AdActivity"

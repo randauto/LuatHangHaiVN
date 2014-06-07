@@ -7,6 +7,8 @@ import android.os.Handler;
 import android.view.Window;
 
 import com.vinilearning.maritimelaw.R;
+import com.vinilearning.maritimelaw.adapters.LoadDataAsyncTask;
+import com.vinilearning.maritimelaw.databases.DatabaseFactory;
 
 public class SplashScreen extends Activity {
 	@Override
@@ -15,15 +17,25 @@ public class SplashScreen extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splashscreen);
 
+		if (DatabaseFactory.chapters == null
+				|| DatabaseFactory.contents == null) {
+			new LoadDataAsyncTask(SplashScreen.this).execute();
+			return;
+		}
+
 		new Handler().postDelayed(new Runnable() {
 
 			@Override
 			public void run() {
-				Intent intent = new Intent(SplashScreen.this,
-						MainActivity.class);
-				startActivity(intent);
+				nextMain();
 			}
 		}, 2000);
+	}
+
+	private void nextMain() {
+		Intent intent = new Intent(SplashScreen.this, DashBoardActivity.class);
+		startActivity(intent);
+		finish();
 	}
 
 	@Override

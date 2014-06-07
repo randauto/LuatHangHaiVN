@@ -9,13 +9,18 @@ package com.vinilearning.maritimelaw.model;
 public class MChapter {
 	private int id;
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	private String content;
 
 	public MChapter() {
 	}
 
-	public MChapter(String content) {
+	public MChapter(int id, String content) {
 		this.content = content;
+		this.id = id;
 	}
 
 	public int getId() {
