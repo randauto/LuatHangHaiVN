@@ -25,9 +25,17 @@ public class IntroductionActivity extends BaseActivity {
 				buf.append(str);
 			}
 			in.close();
-			String regularExpression = "<strong></strong>";
+			String regularExpression = "<strong></strong>"; 
 			String[] str1_7 = buf.toString().split(regularExpression);
 			System.out.println(str1_7.length);
+
+			for (int i = 0; i < str1_7.length; i++) {
+				String content = str1_7[i];
+				String[] ar = content.split("<p align=\"justify\">");
+				String title = ar[1];
+				System.out.println("title: " + "<p align=\"justify\">" + title);
+			}
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

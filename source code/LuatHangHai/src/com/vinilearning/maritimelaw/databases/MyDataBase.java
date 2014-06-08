@@ -20,6 +20,7 @@ public class MyDataBase extends SQLiteAssetHelper {
 	public static final String CONTENT_TABLE = "tblContent";
 	public static final String CONTENT_ID = "id";
 	public static final String CONTENT_PARENTID = "parent_id";
+	public static final String CONTENT_TITLE = "title";
 	public static final String CONTENT_TEXT = "content";
 
 	public MyDataBase(Context paramContext) {
@@ -42,11 +43,11 @@ public class MyDataBase extends SQLiteAssetHelper {
 		return localCursor;
 	}
 
-	private final String[] comlumnsContent = {};
+	private final String[] comlumnsContent = { CONTENT_ID, CONTENT_PARENTID,
+			CONTENT_TITLE, CONTENT_TEXT };
 
 	public MContent insertContentToDb(MContent content) {
-		SQLiteDatabase localSqLiteDatabase = getWritableDatabase();
-		SQLiteQueryBuilder localSqLiteQueryBuilder = new SQLiteQueryBuilder();
+
 		return null;
 	}
 }
