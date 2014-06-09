@@ -6,12 +6,15 @@ import android.widget.ListView;
 
 import com.vinilearning.maritimelaw.R;
 import com.vinilearning.maritimelaw.adapters.ChapterAdapter;
+import com.vinilearning.maritimelaw.adapters.ContentAdapter;
 import com.vinilearning.maritimelaw.databases.DatabaseFactory;
 
 public class MainActivity extends ActionBarActivity {
 	private ListView lvChapter;
 
 	private ChapterAdapter adapter;
+
+	private ContentAdapter adapterContent;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +31,12 @@ public class MainActivity extends ActionBarActivity {
 			DatabaseFactory.chapters = DatabaseFactory.getAllChapter(this);
 		}
 
-		adapter = new ChapterAdapter(this, DatabaseFactory.chapters);
-		lvChapter.setAdapter(adapter);
+		if (DatabaseFactory.contents == null) {
+			DatabaseFactory.contents = DatabaseFactory.getAllContent(this);
+		}
+
+		adapterContent = new ContentAdapter(this, DatabaseFactory.contents);
+		lvChapter.setAdapter(adapterContent);
 
 	}
 

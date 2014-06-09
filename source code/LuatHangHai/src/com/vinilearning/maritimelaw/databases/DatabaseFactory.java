@@ -18,6 +18,29 @@ public class DatabaseFactory {
 		contents = null;
 	}
 
+	public static ArrayList<MContent> getAllContent(Context context) {
+		db = new MyDataBase(context);
+		Cursor localCursor = db.getAllContentFromDb();
+		if (localCursor != null) {
+			contents = new ArrayList<MContent>();
+		}
+
+		while (true) {
+			if (!localCursor.moveToNext()) {
+				localCursor.close();
+				db.close();
+				return contents;
+			}
+			MContent mContent = new MContent(localCursor.getInt(localCursor
+					.getColumnIndex(MyDataBase.CONTENT_PARENTID)),
+					localCursor.getString(localCursor
+							.getColumnIndex(MyDataBase.CONTENT_TITLE)),
+					localCursor.getString(localCursor
+							.getColumnIndex(MyDataBase.CONTENT_TEXT)));
+			contents.add(mContent);
+		}
+	}
+
 	public static ArrayList<MChapter> getAllChapter(Context context) {
 		db = new MyDataBase(context);
 		Cursor localCursor = db.getAllChapterFromDb();
@@ -37,10 +60,5 @@ public class DatabaseFactory {
 							.getColumnIndex(MyDataBase.CHAPTER_CONTENT)));
 			chapters.add(mChapter);
 		}
-	}
-
-	public static ArrayList<MContent> getAllContent(Context context) {
-
-		return contents;
 	}
 }
