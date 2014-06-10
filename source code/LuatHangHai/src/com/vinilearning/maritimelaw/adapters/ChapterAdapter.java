@@ -13,7 +13,8 @@ import com.vinilearning.maritimelaw.R;
 import com.vinilearning.maritimelaw.model.MChapter;
 
 public class ChapterAdapter extends BaseAdapter {
-	ArrayList<MChapter> data;
+	private ArrayList<MChapter> data;
+	
 	private Context context;
 
 	public ChapterAdapter(Context context, ArrayList<MChapter> data) {

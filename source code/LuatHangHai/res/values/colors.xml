@@ -1,0 +1,13 @@
+<resources>
+
+    <color name="red">#900</color>
+    <color name="green">#090</color>
+    <color name="yeallow">#FFD20F</color>
+    <color name="blue">#009</color>
+    <color name="blue1">#3276B1</color>
+    <color name="white">#FFF</color>
+    <color name="black">#000</color>
+    <color name="light_gray">#434f5a</color>
+    <color name="gray">#899997</color>
+
+</resources>

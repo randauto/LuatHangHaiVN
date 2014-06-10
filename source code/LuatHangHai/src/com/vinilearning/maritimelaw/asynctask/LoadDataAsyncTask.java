@@ -17,6 +17,9 @@ public class LoadDataAsyncTask extends AsyncTask<Void, Void, Void> {
 	@Override
 	protected Void doInBackground(Void... params) {
 		DatabaseFactory.chapters = DatabaseFactory.getAllChapter(context);
+		
+		DatabaseFactory.contents = DatabaseFactory.getAllContent(context);
+		
 		return null;
 	}
 

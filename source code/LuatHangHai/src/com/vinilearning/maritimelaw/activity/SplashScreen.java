@@ -32,6 +32,9 @@ public class SplashScreen extends Activity {
 		}, 2000);
 	}
 
+	/**
+	 * Goto dashboard screen.
+	 */
 	private void nextMain() {
 		Intent intent = new Intent(SplashScreen.this, DashBoardActivity.class);
 		startActivity(intent);

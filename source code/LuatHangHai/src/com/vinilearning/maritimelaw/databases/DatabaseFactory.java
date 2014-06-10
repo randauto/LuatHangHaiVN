@@ -10,7 +10,9 @@ import com.vinilearning.maritimelaw.model.MContent;
 
 public class DatabaseFactory {
 	public static MyDataBase db;
+
 	public static ArrayList<MChapter> chapters;
+
 	public static ArrayList<MContent> contents;
 
 	static {
@@ -18,7 +20,14 @@ public class DatabaseFactory {
 		contents = null;
 	}
 
+	/**
+	 * Method used to get all content.
+	 * 
+	 * @param context
+	 * @return
+	 */
 	public static ArrayList<MContent> getAllContent(Context context) {
+		contents = null;
 		db = new MyDataBase(context);
 		Cursor localCursor = db.getAllContentFromDb();
 		if (localCursor != null) {
@@ -41,7 +50,14 @@ public class DatabaseFactory {
 		}
 	}
 
+	/**
+	 * Method used to get all chapter.
+	 * 
+	 * @param context
+	 * @return
+	 */
 	public static ArrayList<MChapter> getAllChapter(Context context) {
+		chapters = null;
 		db = new MyDataBase(context);
 		Cursor localCursor = db.getAllChapterFromDb();
 		if (localCursor != null) {
