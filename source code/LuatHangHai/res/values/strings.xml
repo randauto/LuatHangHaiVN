@@ -11,12 +11,14 @@
     <string name="aboutus">Về chúng tôi</string>
     <string name="version">Version %s is now reversed</string>
     <string name="vote5star">Đánh giá 5 sao!</string>
-    <string name="about_us_text">Chúng tôi là. &lt;br />Nếu bạn thấy ứng dụng này hữu ích cho bạn, xin hãy đánh giá 5 sao!&lt;br/>Website của chúng tôi: &lt;a href=\'www.vinilearning.com\'>www.vinilearning.com&lt;/a></string>
+    <string name="about_us_text">Chúng tôi là Vinilearning. &lt;br />Nếu bạn thấy ứng dụng này hữu ích cho bạn, xin hãy đánh giá 5 sao!&lt;br/>Website của chúng tôi: &lt;a href=\'www.vinilearning.com\'>www.vinilearning.com&lt;/a></string>
 
     <!--  -->
     <string name="intro_title">BỘ LUẬT HÀNG HẢI VIỆT NAM</string>
     <string name="intro_content2">Căn cứ vào Hiến pháp nước Cộng hoà xã hội chủ nghĩa Việt Nam năm 1992 đã được sửa đổi, bổ sung theo Nghị quyết số 51/2001/QH10 ngày 25 tháng 12 năm 2001 của Quốc hội khoá X, kỳ họp thứ 10.\nBộ luật này quy định về hàng hải.</string>
     <string name="gioi_thieu">Giới thiệu</string>
     <string name="tra_cuu">Tra cứu</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="search_hint">Gõ từ cần tìm kiếm</string>
 
 </resources>

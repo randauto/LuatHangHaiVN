@@ -4,8 +4,8 @@
 
     <item
         android:id="@+id/action_search"
-        android:title="Tìm kiếm"
+        android:title="@string/search"
         diccionaricatala:actionViewClass="android.support.v7.widget.SearchView"
-        diccionaricatala:showAsAction="collapseActionView|ifRoom"/>
+        diccionaricatala:showAsAction="always"/>
 
 </menu>

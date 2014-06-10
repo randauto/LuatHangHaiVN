@@ -153,14 +153,15 @@ public class MainActivity extends ActionBarActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.search_view, menu);
+
 		SearchManager SManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+
 		MenuItem searchMenuItem = menu.findItem(R.id.action_search);
+
 		SearchView searchViewAction = (SearchView) MenuItemCompat
 				.getActionView(searchMenuItem);
 		searchViewAction.setSearchableInfo(SManager
 				.getSearchableInfo(getComponentName()));
-		searchViewAction.setIconifiedByDefault(false);
-
 		return true;
 	}
 
