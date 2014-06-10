@@ -40,6 +40,8 @@ public class MainActivity extends ActionBarActivity {
 
 	private AnimationAdapter animationContentAdapter;
 
+	private SearchView searchViewAction;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -107,6 +109,13 @@ public class MainActivity extends ActionBarActivity {
 
 	@Override
 	public void onBackPressed() {
+
+		if (searchViewAction.isSelected()
+				|| searchViewAction.isClickable()) {
+			searchViewAction.onActionViewCollapsed();
+			return;
+		}
+
 		if (lvChapter.getAdapter() == animationChapterAdapter) {
 			super.onBackPressed();
 		} else {
@@ -158,7 +167,7 @@ public class MainActivity extends ActionBarActivity {
 
 		MenuItem searchMenuItem = menu.findItem(R.id.action_search);
 
-		SearchView searchViewAction = (SearchView) MenuItemCompat
+		searchViewAction = (SearchView) MenuItemCompat
 				.getActionView(searchMenuItem);
 		searchViewAction.setSearchableInfo(SManager
 				.getSearchableInfo(getComponentName()));

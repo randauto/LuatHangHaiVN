@@ -11,6 +11,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.vinilearning.maritimelaw.R;
 import com.vinilearning.maritimelaw.common.BaseActivity;
+import com.vinilearning.maritimelaw.utils.T;
 
 public class DashBoardActivity extends BaseActivity {
 	private Button btnTraCuu, btnIntro;
@@ -62,9 +63,25 @@ public class DashBoardActivity extends BaseActivity {
 		super.onDestroy();
 	}
 
+	private boolean doubleBackToExitPressedOnce = false;
+
 	@Override
 	public void onBackPressed() {
-		super.onBackPressed();
+		if (doubleBackToExitPressedOnce) {
+			super.onBackPressed();
+			return;
+		}
+
+		this.doubleBackToExitPressedOnce = true;
+		T.show(getString(R.string.press_again_exit));
+
+		new Handler().postDelayed(new Runnable() {
+
+			@Override
+			public void run() {
+				doubleBackToExitPressedOnce = false;
+			}
+		}, 2000);
 	}
 
 	/**
