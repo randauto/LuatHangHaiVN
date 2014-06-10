@@ -18,6 +18,9 @@ public class IntroductionActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.introduction_layout);
+	}
+
+	private void scriptInsertData() {
 		try {
 			String[] data = { "1_7.html", "8_44.html", "45_69.html",
 					"70_90.html", "91_122.html", "123_142.html",
@@ -65,7 +68,6 @@ public class IntroductionActivity extends BaseActivity {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	@Override

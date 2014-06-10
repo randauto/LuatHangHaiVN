@@ -5,15 +5,18 @@
     <string name="hello_world">Hello world!</string>
     <string name="website_vini">http://www.vinilearning.com</string>
     <string name="image_des">This is a image</string>
-    <string name="cancel">Cancel</string>
-    <string name="close">Close</string>
-    <string name="press_again_exit">Press againt to exits.</string>
-    <string name="aboutus">About us</string>
+    <string name="cancel">Hủy</string>
+    <string name="close">Đóng lại</string>
+    <string name="press_again_exit">Bấm lần nữa để thoát.</string>
+    <string name="aboutus">Về chúng tôi</string>
     <string name="version">Version %s is now reversed</string>
-    <string name="vote5star">Vote 5 start!</string>
-    <string name="about_us_text">We are vinilearning. &lt;br />If you like this app, please vote 5 star!. &lt;br/>Us website: &lt;a href=\'www.vinilearning.com\'>www.vinilearning.com&lt;/a></string>
-    
+    <string name="vote5star">Đánh giá 5 sao!</string>
+    <string name="about_us_text">Chúng tôi la. &lt;br />If you like this app, please vote 5 star!. &lt;br/>Us website: &lt;a href=\'www.vinilearning.com\'>www.vinilearning.com&lt;/a></string>
+
     <!--  -->
     <string name="intro_title">BỘ LUẬT HÀNG HẢI VIỆT NAM</string>
-	<string name="intro_content2">Căn cứ vào Hiến pháp nước Cộng hoà xã hội chủ nghĩa Việt Nam năm 1992 đã được sửa đổi, bổ sung theo Nghị quyết số 51/2001/QH10 ngày 25 tháng 12 năm 2001 của Quốc hội khoá X, kỳ họp thứ 10.\nBộ luật này quy định về hàng hải.</string>
+    <string name="intro_content2">Căn cứ vào Hiến pháp nước Cộng hoà xã hội chủ nghĩa Việt Nam năm 1992 đã được sửa đổi, bổ sung theo Nghị quyết số 51/2001/QH10 ngày 25 tháng 12 năm 2001 của Quốc hội khoá X, kỳ họp thứ 10.\nBộ luật này quy định về hàng hải.</string>
+    <string name="gioi_thieu">Giới thiệu</string>
+    <string name="tra_cuu">Tra cứu</string>
+
 </resources>

@@ -3,6 +3,7 @@
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/background"
     tools:context=".MainActivity" >
 
     <LinearLayout
@@ -16,24 +17,21 @@
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Điều 1"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:gravity="center"
+            android:padding="5dp"
+            android:singleLine="false"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text=" Đối tượng áp dụng"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
-
-        <TextView
+            android:id="@+id/tvContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:text="1. Bộ luật này áp dụng đối với tổ chức, cá nhân Việt Nam và tổ chức, cá nhân nước ngoài liên quan đến hoạt động hàng hải tại Việt Nam."
+            android:padding="5dp"
+            android:singleLine="false"
             android:textAlignment="textStart"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
 
     <com.google.android.gms.ads.AdView

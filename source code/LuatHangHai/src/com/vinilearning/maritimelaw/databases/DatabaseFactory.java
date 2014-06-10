@@ -41,7 +41,9 @@ public class DatabaseFactory {
 				return contents;
 			}
 			MContent mContent = new MContent(localCursor.getInt(localCursor
-					.getColumnIndex(MyDataBase.CONTENT_PARENTID)),
+					.getColumnIndex(MyDataBase.CONTENT_ID)),
+					localCursor.getInt(localCursor
+							.getColumnIndex(MyDataBase.CONTENT_PARENTID)),
 					localCursor.getString(localCursor
 							.getColumnIndex(MyDataBase.CONTENT_TITLE)),
 					localCursor.getString(localCursor

@@ -1,6 +1,7 @@
 package com.vinilearning.maritimelaw.model;
 
 public class MContent extends MChapter {
+
 	private int parent_id;
 	private String content;
 	private String title;
@@ -8,7 +9,8 @@ public class MContent extends MChapter {
 	public MContent() {
 	}
 
-	public MContent(int parent_id, String title, String content) {
+	public MContent(int id, int parent_id, String title, String content) {
+		this.id = id;
 		this.parent_id = parent_id;
 		this.title = title;
 		this.content = content;

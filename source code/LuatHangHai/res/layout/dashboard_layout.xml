@@ -10,6 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/adView"
+        android:background="@drawable/background"
+        android:gravity="center"
         android:orientation="vertical"
         android:weightSum="2" >
 
@@ -17,13 +19,19 @@
             android:id="@+id/btnTraCuu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tra cuu" />
+            android:layout_margin="15dp"
+            android:background="@drawable/button_blue"
+            android:text="@string/tra_cuu"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btnIntro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Gioi thieu" />
+            android:layout_margin="15dp"
+            android:background="@drawable/button_blue"
+            android:text="@string/gioi_thieu"
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <com.google.android.gms.ads.AdView

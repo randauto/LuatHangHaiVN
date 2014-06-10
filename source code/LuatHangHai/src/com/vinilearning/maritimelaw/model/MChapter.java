@@ -7,7 +7,7 @@ package com.vinilearning.maritimelaw.model;
  * 
  */
 public class MChapter {
-	private int id;
+	protected int id;
 
 	public void setId(int id) {
 		this.id = id;
