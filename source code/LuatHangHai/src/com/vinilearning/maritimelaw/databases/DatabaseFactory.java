@@ -34,22 +34,23 @@ public class DatabaseFactory {
 			contents = new ArrayList<MContent>();
 		}
 
-		while (true) {
-			if (!localCursor.moveToNext()) {
-				localCursor.close();
-				db.close();
-				return contents;
-			}
-			MContent mContent = new MContent(localCursor.getInt(localCursor
-					.getColumnIndex(MyDataBase.CONTENT_ID)),
-					localCursor.getInt(localCursor
-							.getColumnIndex(MyDataBase.CONTENT_PARENTID)),
-					localCursor.getString(localCursor
-							.getColumnIndex(MyDataBase.CONTENT_TITLE)),
-					localCursor.getString(localCursor
-							.getColumnIndex(MyDataBase.CONTENT_TEXT)));
-			contents.add(mContent);
+		if (localCursor.moveToFirst()) {
+			do {
+				MContent mContent = new MContent(localCursor.getInt(localCursor
+						.getColumnIndex(MyDataBase.CONTENT_ID)),
+						localCursor.getInt(localCursor
+								.getColumnIndex(MyDataBase.CONTENT_PARENTID)),
+						localCursor.getString(localCursor
+								.getColumnIndex(MyDataBase.CONTENT_TITLE)),
+						localCursor.getString(localCursor
+								.getColumnIndex(MyDataBase.CONTENT_TEXT)));
+				contents.add(mContent);
+			} while (localCursor.moveToNext());
 		}
+		localCursor.close();
+		db.close();
+
+		return contents;
 	}
 
 	/**
@@ -66,17 +67,17 @@ public class DatabaseFactory {
 			chapters = new ArrayList<MChapter>();
 		}
 
-		while (true) {
-			if (!localCursor.moveToNext()) {
-				localCursor.close();
-				db.close();
-				return chapters;
-			}
-			MChapter mChapter = new MChapter(localCursor.getInt(localCursor
-					.getColumnIndex(MyDataBase.CHAPTER_ID)),
-					localCursor.getString(localCursor
-							.getColumnIndex(MyDataBase.CHAPTER_CONTENT)));
-			chapters.add(mChapter);
+		if (localCursor.moveToFirst()) {
+			do {
+				MChapter mChapter = new MChapter(localCursor.getInt(localCursor
+						.getColumnIndex(MyDataBase.CHAPTER_ID)),
+						localCursor.getString(localCursor
+								.getColumnIndex(MyDataBase.CHAPTER_CONTENT)));
+				chapters.add(mChapter);
+			} while (localCursor.moveToNext());
 		}
+		localCursor.close();
+		db.close();
+		return chapters;
 	}
 }

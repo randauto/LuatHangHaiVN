@@ -2,15 +2,25 @@ package com.vinilearning.maritimelaw.activity;
 
 import java.util.ArrayList;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.SearchView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.nhaarman.listviewanimations.swinginadapters.AnimationAdapter;
 import com.nhaarman.listviewanimations.swinginadapters.prepared.AlphaInAnimationAdapter;
 import com.vinilearning.maritimelaw.R;
@@ -67,13 +77,32 @@ public class MainActivity extends ActionBarActivity {
 					// next to screen content activity.
 					Intent intent = new Intent(MainActivity.this,
 							ContentActivity.class);
-					intent.putExtra("id", animationContentAdapter.getItemId(position));
+					intent.putExtra("id",
+							animationContentAdapter.getItemId(position));
 					startActivity(intent);
 				}
 			}
 
 		});
+		(new Handler()).postDelayed(new Runnable() {
 
+			@Override
+			public void run() {
+				loadAdsView();
+
+			}
+		}, 1000);
+	}
+
+	/**
+	 * Method used to load ads view.
+	 * 
+	 * @param rootView
+	 */
+	private void loadAdsView() {
+		AdView adView = (AdView) findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
 	}
 
 	@Override
@@ -118,6 +147,21 @@ public class MainActivity extends ActionBarActivity {
 			getSupportActionBar().setTitle("Chương " + id);
 		}
 
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.search_view, menu);
+		SearchManager SManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+		MenuItem searchMenuItem = menu.findItem(R.id.action_search);
+		SearchView searchViewAction = (SearchView) MenuItemCompat
+				.getActionView(searchMenuItem);
+		searchViewAction.setSearchableInfo(SManager
+				.getSearchableInfo(getComponentName()));
+		searchViewAction.setIconifiedByDefault(false);
+
+		return true;
 	}
 
 	@Override

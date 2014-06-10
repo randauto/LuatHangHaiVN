@@ -6,8 +6,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.vinilearning.maritimelaw.R;
 import com.vinilearning.maritimelaw.common.BaseActivity;
 import com.vinilearning.maritimelaw.databases.MyDataBase;
@@ -18,6 +21,26 @@ public class IntroductionActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.introduction_layout);
+
+		(new Handler()).postDelayed(new Runnable() {
+
+			@Override
+			public void run() {
+				loadAdsView();
+
+			}
+		}, 1000);
+	}
+
+	/**
+	 * Method used to load ads view.
+	 * 
+	 * @param rootView
+	 */
+	private void loadAdsView() {
+		AdView adView = (AdView) findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
 	}
 
 	private void scriptInsertData() {

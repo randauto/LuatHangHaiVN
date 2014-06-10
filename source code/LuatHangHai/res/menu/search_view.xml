@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:diccionaricatala="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/action_search"
+        android:title="Tìm kiếm"
+        diccionaricatala:actionViewClass="android.support.v7.widget.SearchView"
+        diccionaricatala:showAsAction="collapseActionView|ifRoom"/>
+
+</menu>

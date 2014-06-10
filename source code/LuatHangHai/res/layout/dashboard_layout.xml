@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:background="@drawable/button_blue"
+            android:padding="10dp"
             android:text="@string/tra_cuu"
             android:textColor="@color/white" />
 
@@ -29,6 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:background="@drawable/button_blue"
+            android:padding="10dp"
             android:text="@string/gioi_thieu"
             android:textColor="@color/white" />
     </LinearLayout>
