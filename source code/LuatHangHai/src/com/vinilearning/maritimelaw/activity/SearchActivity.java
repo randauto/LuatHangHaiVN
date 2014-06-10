@@ -8,6 +8,7 @@ import android.app.SearchManager;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,6 +16,8 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.vinilearning.maritimelaw.R;
 import com.vinilearning.maritimelaw.adapters.ContentAdapter;
 import com.vinilearning.maritimelaw.databases.DatabaseFactory;
@@ -53,6 +56,25 @@ public class SearchActivity extends Activity {
 			}
 
 		});
+
+		(new Handler()).postDelayed(new Runnable() {
+
+			@Override
+			public void run() {
+				loadAdsView();
+			}
+		}, 1000);
+	}
+
+	/**
+	 * Method used to load ads view.
+	 * 
+	 * @param rootView
+	 */
+	private void loadAdsView() {
+		AdView adView = (AdView) findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
 	}
 
 	@Override
@@ -76,7 +98,7 @@ public class SearchActivity extends Activity {
 		@Override
 		protected void onPreExecute() {
 			dialog = new ProgressDialog(SearchActivity.this);
-			dialog.setMessage("Đang tìm kiếm...");
+			dialog.setMessage(getString(R.string.searching));
 			dialog.setCancelable(true);
 			dialog.show();
 			super.onPreExecute();

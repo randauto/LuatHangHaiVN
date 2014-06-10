@@ -21,8 +21,6 @@ import android.widget.ListView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.nhaarman.listviewanimations.swinginadapters.AnimationAdapter;
-import com.nhaarman.listviewanimations.swinginadapters.prepared.AlphaInAnimationAdapter;
 import com.vinilearning.maritimelaw.R;
 import com.vinilearning.maritimelaw.adapters.ChapterAdapter;
 import com.vinilearning.maritimelaw.adapters.ContentAdapter;
@@ -35,10 +33,6 @@ public class MainActivity extends ActionBarActivity {
 	private ChapterAdapter adapterChapter;
 
 	private ContentAdapter adapterContent;
-
-	private AnimationAdapter animationChapterAdapter;
-
-	private AnimationAdapter animationContentAdapter;
 
 	private SearchView searchViewAction;
 
@@ -62,25 +56,22 @@ public class MainActivity extends ActionBarActivity {
 		}
 
 		adapterChapter = new ChapterAdapter(this, DatabaseFactory.chapters);
-		animationChapterAdapter = new AlphaInAnimationAdapter(adapterChapter);
-		animationChapterAdapter.setAbsListView(lvChapter);
-		lvChapter.setAdapter(animationChapterAdapter);
+		lvChapter.setAdapter(adapterChapter);
 
 		lvChapter.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				if (lvChapter.getAdapter() == animationChapterAdapter) {
+				if (lvChapter.getAdapter() == adapterChapter) {
 					// show item of chapter.
-					new GetAllContentById().execute(animationChapterAdapter
+					new GetAllContentById().execute(adapterChapter
 							.getItemId(position));
 				} else {
 					// next to screen content activity.
 					Intent intent = new Intent(MainActivity.this,
 							ContentActivity.class);
-					intent.putExtra("id",
-							animationContentAdapter.getItemId(position));
+					intent.putExtra("id", adapterContent.getItemId(position));
 					startActivity(intent);
 				}
 			}
@@ -110,19 +101,15 @@ public class MainActivity extends ActionBarActivity {
 	@Override
 	public void onBackPressed() {
 
-		if (searchViewAction.isSelected()
-				|| searchViewAction.isClickable()) {
+		if (searchViewAction.isSelected() || searchViewAction.isClickable()) {
 			searchViewAction.onActionViewCollapsed();
 			return;
 		}
 
-		if (lvChapter.getAdapter() == animationChapterAdapter) {
+		if (lvChapter.getAdapter() == adapterChapter) {
 			super.onBackPressed();
 		} else {
-			animationChapterAdapter = new AlphaInAnimationAdapter(
-					adapterChapter);
-			animationChapterAdapter.setAbsListView(lvChapter);
-			lvChapter.setAdapter(animationChapterAdapter);
+			lvChapter.setAdapter(adapterChapter);
 			getSupportActionBar().setTitle(getString(R.string.app_name));
 		}
 	}
@@ -149,10 +136,7 @@ public class MainActivity extends ActionBarActivity {
 		protected void onPostExecute(ArrayList<MContent> result) {
 			super.onPostExecute(result);
 			adapterContent = new ContentAdapter(MainActivity.this, result);
-			animationContentAdapter = new AlphaInAnimationAdapter(
-					adapterContent);
-			animationContentAdapter.setAbsListView(lvChapter);
-			lvChapter.setAdapter(animationContentAdapter);
+			lvChapter.setAdapter(adapterContent);
 			getSupportActionBar().setTitle("Chương " + id);
 		}
 
@@ -177,8 +161,6 @@ public class MainActivity extends ActionBarActivity {
 	@Override
 	protected void onDestroy() {
 		adapterChapter = null;
-		animationContentAdapter = null;
-		animationChapterAdapter = null;
 		adapterContent = null;
 		super.onDestroy();
 	}

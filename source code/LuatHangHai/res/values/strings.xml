@@ -22,5 +22,6 @@
     <string name="search_hint">Gõ từ cần tìm kiếm</string>
     <string name="no_result">Không có nội dung phù hợp</string>
     <string name="search_result">Kết quả tìm kiếm</string>
+    <string name="searching">Đang tìm kiếm...</string>
 
 </resources>
